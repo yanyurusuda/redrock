@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#body {
+			height: 80%;
+			min-height: 462px;
+			width: 658px;
+			margin: 0 auto;
+			text-align: center;
+			margin-top: -19px;
+			margin-bottom: 11px;
+		}
+		#body img{
+			width: 270px;
+			height: 129px;
+		}
+		#head{
+			height: 10%;
+			min-height: 70px;
+			min-width: 1250px;
+			
+		}
+		#head-left{
+			height: 60px;
+			width: 500px;
+			float: left;
+			padding-left: 24px;
+			
+		}
+		#head-left a:hover{
+		    color: #4e6ef2;
+		}
+		
+
+		
+		#head-left>a{
+                   margin: 19px 31px 0px 0px;
+				   /* 加display属性外上边距生效 */
+				   display: inline-block;
+				   font: 13px/23px Arial,sans-serif;
+				   color: #222222;
+				   text-decoration: none;
+		}
+
+		#head-right{
+			height: 60px;
+			width: 162px;
+			float: right;
+			
+		}
+		#body{
+			height: 80%;
+			min-height: 462px;
+			width: 658px;
+			margin: 0 auto;
+			
+		}
+
+		#search {
+			width: 656px;
+			height: 44px;
+			background-color: aliceblue;
+		}
+		#search-input {
+			height: 16px;
+			width: 548px;
+			float: left;
+			background-color: plum;
+		}
+        #search-input input{
+                  height: 16px;
+				  width: 443px;
+				  border: 2px solid #c4c7ce;
+				  padding: 12px 87px 12px 16px;
+				  border-radius: 10px 0 0 10px;
+				  border-right-color: #4e6ef2;
+				  font-size: 16px;
+				  }
+				  /* 伪类虚标 */
+		#search-input input:hover{
+                   border-color: #a7aab5;
+				   border-right: 0px;
+
+		}
+		#search-input input:focus{
+			              border-color:#4e6ef2 ;
+						  /* 去掉默认黑边 */
+						  outline:none;
+		}		  
+		#search-bth{
+			height: 44px;
+			width: 108px;
+			float: right;
+			background-color: palevioletred;
+		}
+		#search-bth input{
+			height: 44px;
+			width: 108px;
+			background-color: #4e6ef2;
+			border: 0;
+			border-radius: 0 10px 10px 0;
+			font-size: 17px;
+		    color: #fff;
+		}
+		#search-bth input:hover{
+              /* 搜索按钮添加 */
+			background-color: #4662b9;
+		}
+		.footer
+		{
+			position:absolute;
+			bottom:0;
+			width:100%;
+			height:30px;
+			color:darkgray;
+			font-size:12px;	
+		}
+		.fo_a
+		{
+			color:darkgray;
+			text-decoration:none;
+			padding:0 5px
+		}
+	</style>
+</head>
+
+<body>
+	<div id="head">
+		<div id="head-left">
+			<a href="http://news.baidu.com/" target="_blank">新闻</a>
+			<a href="https://www.hao123.com/" target="_blank">hao123</a>				
+			<a href="https://map.baidu.com/" target="_blank">地图</a>				
+			<a href="http://v.baidu.com/" target="_blank">视频</a>				
+			<a href="https://tieba.baidu.com/index.html" target="_blank">贴吧</a>				
+		    <a href="https://www.baidu.com/more/" target="_blank"> 更多 </a>
+		
+
+		</div>
+		<div id="head-right"></div>
+	</div>
+	<div id="body">
+		<img src="images/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png">
+		<from action="">
+			<div id="search">
+				<div id="search-input">
+					<input type="text" />
+
+				</div>
+                <div  id="search-bth" >
+				     <input type="submit" value="百度一下" />
+			     </div>
+
+			</div>
+
+		</from>
+	</div>
+	<div class="footer">
+		<div style="float:left;">
+			<a class="fo_a" href="https://www.baidu.com/cache/sethelp/index.html">设为首页</a>
+			<a class="fo_a" href="https://home.baidu.com/">关于百度</a>
+			<a class="fo_a" href="http://ir.baidu.com/">About Baidu</a>
+			<a class="fo_a" href="http://e.baidu.com/ebaidu/home?refer=888">百度推广</a>
+			<a class="fo_a" href="https://www.baidu.com/duty/">使用百度前必读</a>
+			<a class="fo_a" href="https://help.baidu.com/newadd?prod_id=1&category=4">意见反馈</a>
+			<a class="fo_a" href="https://help.baidu.com/newadd?prod_id=1&category=4">帮助中心</a>
+		</div>
+		
+		<div style="float:right;">
+			@2022 Baidu&nbsp&nbsp&nbsp
+			(京)-经营性-2017-0020&nbsp
+			<a class="fo_a" 
+			   href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001">
+			   京公网安备11000002000001
+			</a>
+			&nbsp京ICP030173号&nbsp&nbsp
+		</div>
+	</div>
+</body>
+
+
+</body>
+
+</html>

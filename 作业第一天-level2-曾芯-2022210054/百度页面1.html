@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+<head>
+	<title>百度一下，你就知道</title>
+	<!--小图标-->
+	<link rel="shortcut icon" href="favicon.ico" />
+	<style>
+	
+		body
+		{
+			height:100%; 
+			width:100%;  
+			margin:0; 
+			padding:0;
+		}
+		
+		#form{
+			position: relative;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: black;
+		}
+		
+		/*右上方菜单栏*/
+		.menu
+		{
+			text-align:right;
+			font-size:15px;"
+			color:black;
+		}
+		.menu a
+		{
+			padding:0 6px
+			/*每个词之间加空格*/
+		}
+		/*疑问：这里 me_sty 的样式为什么用不了呢？*/
+		/*由于整个文件只有这里使用了span，可以用span>a更改文件*/
+		.me_sty
+		{
+			font-family:arial;
+			color:black;
+		}
+		span>a
+		{
+			font-family:arial;
+			color:black;
+		}
+		.me_blue
+		{
+			display:inline-block;
+			width:80px;
+			height:22px;
+			text-align:center;
+			background:#1E90FF;
+			color:white;
+			text-decoration:none;	
+		}
+		
+		/*logo和搜索栏*/
+		.middle
+		{
+			text-align: center;
+			font-size: 0px;
+			margin-top:30px;
+		}		
+		.s_ipt_wr{
+			display: inline-block;
+			zoom: 1;
+			background: 0 0;
+			vertical-align: top;
+			height: 34px;
+			border: 1px solid #b6b6b6;
+			width: 539px;
+			margin-right: 0;
+			border-right-width: 0;
+			border-color: #b8b8b8 transparent #ccc #b8b8b8;
+			overflow: hidden;
+		}
+		.iptfocus
+		{
+			border-color: #4791ff transparent #4791ff #4791ff;
+		}
+		.quickdelete-wrap
+		{
+			position: relative;
+		}
+		.soutu-btn
+		{
+			z-index:  1;
+			position: absolute;
+			right: 11px;
+			top: 50%;
+			margin-top: -8px;
+			height: 16px;
+			width: 18px;
+			background: #fff url(camera_new_5606e8f.png) no-repeat;
+			cursor: pointer;
+		}
+		/*鼠标光标放到相机上时，相机变色*/
+		  
+		.s_ipt{
+			width: 526px;
+			height: 22px;
+			font: 16px/18px arial;
+			line-height: 22px;
+			margin: 6px 0 0 7px;
+			padding: 0;
+			background: 0 0;
+			border: 0;
+			outline: 0;
+			-webkit-appearance: none;
+		}
+		.s_btn{
+			width: 100px;
+			height: 36px;
+			cursor: pointer;
+			color: #fff;
+			font-size: 15px;
+			letter-spacing: 1px;
+			background: #3385ff;
+			border: 1px solid #2d78f4;
+			outline: medium;
+			-webkit-appearance: none;
+			-webkit-border-radius: 0;
+		}
+		.s_btn:hover{
+			background: #317ef3;
+			border-bottom: 1px solid #2868c8;
+			box-shadow: 1px 1px 1px #ccc
+		}
+		
+		/*二维码和下方的文字*/
+		.qr
+		{	
+			text-align: center;
+			margin-top:90px;
+		}
+		.qr_b1
+		{
+			font-family:arial;
+			color:black;
+			font-size:15px;
+		}
+		.qr_b2
+		{
+			font-family:arial;
+			color:darkgray;
+			font-size:14px;
+		}
+		
+		/*最下方的文字*/
+		.footer
+		{
+			position:absolute;
+			bottom:0;
+			width:100%;
+			height:30px;
+			color:darkgray;
+			font-size:12px;	
+		}
+		.fo_a
+		{
+			color:darkgray;
+			text-decoration:none;
+			padding:0 5px
+		}
+		#ed a{
+			margin-right: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<form id="form">
+		<div class="menu">
+			<span class="me_sty">
+					
+				<a href="http://news.baidu.com/">新闻</a>
+				<a href="https://www.hao123.com/">hao123</a>				
+				<a href="https://map.baidu.com/">地图</a>				
+				<a href="http://v.baidu.com/">视频</a>				
+				<a href="https://tieba.baidu.com/index.html">贴吧</a>				
+				<a href="http://xueshu.baidu.com/">学术</a>				
+				<a href="javascript:;">登陆</a>				
+				<a href="http://www.baidu.com/gaoji/preferences.html">设置</a>				
+			</span>
+			<a class="me_blue"
+			href="https://www.baidu.com/more/" > 更多产品 </a>
+		</div>
+	</form>
+	
+	
+	<div class="middle">
+		<img src="images/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" width="270" height="129" title="点击一下，了解更多">
+		<form id="form">
+			<!--搜索框-->
+			<div id="ipt"  class="s_ipt_wr quickdelete-wrap">
+				<div class="soutu-btn"></div>
+				<input class="s_ipt" value maxlength="255"   >		
+			</div>
+			<!--百度一下-->
+			<span>
+				<input type="submit" value="百度一下" class="s_btn">
+			</span>
+		</form>
+	</div>
+	
+	
+	<div class="qr">
+		<img src="images/qq_pic_merged_1665823968340.jpg" width="120px" height="120px"/>
+		<p class="qr_b1">下载百度APP</p>
+		<p class="qr_b2">有事搜一搜  没事看一看</p>	
+	<div>
+	
+
+	
+	<div class="footer">
+		<div style="float:left;">
+			<a class="fo_a" href="https://www.baidu.com/cache/sethelp/index.html">设为首页</a>
+			<a class="fo_a" href="https://home.baidu.com/">关于百度</a>
+			<a class="fo_a" href="http://ir.baidu.com/">About Baidu</a>
+			<a class="fo_a" href="http://e.baidu.com/ebaidu/home?refer=888">百度推广</a>
+			<a class="fo_a" href="https://www.baidu.com/duty/">使用百度前必读</a>
+			<a class="fo_a" href="https://help.baidu.com/newadd?prod_id=1&category=4">意见反馈</a>
+			<a class="fo_a" href="https://help.baidu.com/newadd?prod_id=1&category=4">帮助中心</a>
+		</div>
+		
+		<div style="float:right;" id="ed">
+		
+			<a>(京)-经营性-/a2017-0020&nbsp</a>
+			 <a class="fo_a" 
+			   href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001">
+			   京公网安备11000002000001
+			</a>
+		  <a>京ICP030173号</a>	
+		</div>
+	</div>
+</body>
+</html>
