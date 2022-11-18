@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration : none ;
+        }
+        body {
+            padding: 100px;
+        }
+        
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+        
+        ul {
+            margin-top: 50px;
+        }
+       
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209, 243);
+            color: black;
+            font-size: 14px;
+            margin: 15px 0;
+            border-radius: 10px 10px;
+        }
+        
+        li a {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div><button id="red">红色留言</button> </div>
+    <div><textarea name="" id=""></textarea>
+    <button id="send">发布</button>
+    <ul>
+
+    </ul></div>
+    <script>
+        
+        let btn = document.querySelector('#send');
+        let text = document.querySelector('textarea');
+        let ul = document.querySelector('ul');
+        let re = document.querySelector('#red');
+        let gr = document.querySelector('#green');
+        let bul = document.querySelector('#bule');
+        
+        btn.onclick = function() {
+            if (text.value == '') {
+                alert('没有内容捏');
+                return false;
+            } else {
+                
+                let li = document.createElement('li');
+                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";  
+                ul.insertBefore(li, ul.children[0]);
+                
+                let as = document.querySelectorAll('a');
+                for (let i = 0; i < as.length; i++) {
+                    as[i].onclick = function() {
+                       
+                        ul.removeChild(this.parentNode);
+                    }
+          
+                }
+            }
+            let flag =1;
+            re.onclick = function() {
+              let li = document.querySelectorAll('li');
+              
+    if( flag==1 ){
+              for(let i=0;i<li.length;i++)
+              {   
+                
+                li[i].style.backgroundColor = 'red';
+                flag = 0;
+              }
+               
+              }
+            else {
+
+                for(let i=0;i<li.length;i++)
+              {   
+                
+                li[i].style.backgroundColor = 'rgb(245, 209, 243)';
+                flag = 1;
+              }
+
+            }
+
+
+
+
+
+            }
+        
+        }
+    
+    </script>
+</body>

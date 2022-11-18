@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 250px;
+            margin: 200px auto;
+        }
+        
+        .btn {
+            margin-left: 5px;
+        }
+        
+        li {
+            list-style-type: none;
+            background-color: pink;
+            padding: 5px;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+ 
+ 
+<body>
+    <div class="box">
+        <input type="text"><button class="btn">提交</button>
+        <ul></ul>
+    </div>
+    <script>
+        var ul = document.querySelector('ul');
+        var btn = document.querySelector('.btn');
+        var input = document.querySelector('input');
+ 
+        var num = 0;
+        btn.addEventListener('click', function() {
+            if (input.value == '') {
+                alert('请输入内容！');
+                return false;
+            } else {
+                var li = document.createElement('li');
+                num++;
+                colors(li);
+                li.innerText = '第' + num + '条留言：' + input.value;
+                ul.insertBefore(li, ul.children[0]);
+                input.value = '';
+            }
+ 
+        });
+ 
+        // 颜色随机
+        function colors(li) {
+            var r = Math.random() * 10;
+ 
+            if (r <= 2) {
+                li.style.backgroundColor = 'skyblue'
+            } else if (r < 4) {
+                li.style.backgroundColor = 'orange'
+ 
+            } else if (r < 6) {
+                li.style.backgroundColor = 'pink'
+ 
+            } else if (r < 8) {
+                li.style.backgroundColor = 'rgb(186, 253, 169)'
+ 
+            } else {
+                li.style.backgroundColor = 'rgb(187, 141, 148)'
+            }
+        }
+    </script>
+</body>
+ 
+ 
+</html>
