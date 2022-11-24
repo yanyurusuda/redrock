@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bian {
+            width: 600px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 100px auto;
+            position: relative;
+
+        }
+
+        .ball {
+            width: 40px;
+            height: 40px;
+            background-color: rgb(0, 255, 255);
+            margin-top: 10px;
+            border-radius: 50%;
+            position: absolute;
+
+
+        }
+
+        .ball1 {
+            width: 40px;
+            height: 40px;
+            background-color: rgb(255, 140, 0);
+            margin-top: 60px;
+            border-radius: 50%;
+            position: absolute;
+
+
+        }
+
+        .ball2 {
+            width: 40px;
+            height: 40px;
+            background-color: rgb(112, 128, 144);
+            border-radius: 50%;
+            margin-top: 110px;
+            position: absolute;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bian">
+        <div class="ball"> </div>
+        <div class="ball1"> </div>
+        <div class="ball2"> </div>
+    </div>
+    <script>
+        let ba = document.getElementsByClassName('ball')[0];
+        let ba1 = document.getElementsByClassName('ball1')[0];
+        let ba2 = document.getElementsByClassName('ball2')[0];
+        let ball_x = 0;
+        let ball_x1 = 0;
+        let ball_x2 = 0;
+        let speed_x = 2;
+        function move() {
+            setInterval(function () {
+                if (ball_x < 100) {
+                    ball_x = ball_x + speed_x;
+                    ba.style.left = ball_x + "px";
+                }
+                else {
+                    return 0;
+                }
+            }, 60)
+
+        }
+        function move1() {
+
+            setInterval(function () {
+                if (ball_x1 < 100) {
+                    ball_x1 = ball_x1 + speed_x;
+                    ba1.style.left = ball_x1 + "px";
+                }
+                else {
+                    return 0;
+                }
+            }, 60)
+        }
+
+        function move2() {
+
+            setInterval(function () {
+                if (ball_x2 < 100) {
+                    ball_x2 = ball_x2 + speed_x;
+                    ba2.style.left = ball_x2 + "px";
+                }
+                else {
+                    return 0;
+                }
+            }, 60)
+        }
+        // setTimeout定时器嵌套
+        function timer() {
+            setTimeout(() => {
+                move();
+                setTimeout(() => {
+                    move1();
+                    setTimeout(() => {
+                        move2();
+                    }, 3000);
+                }, 3000);
+            }, 1000);
+        }
+        // Promise链式回调
+        function prom() {
+            let p = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    move();
+                }, 1000);
+                resolve(1)
+
+            }).then((value) => {
+                setTimeout(() => {
+                    move1();
+                }, 4000);
+
+
+            }).then((value) => {
+                setTimeout(() => {
+                    move2();
+
+
+                }, 7000);
+
+            })
+        }
+        // aysnc await异步队列
+        let step = (time) => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    move();
+                    resolve(1);
+                }, time);
+            });
+        };
+        let step1 = (time) => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    move1();
+                    resolve(1);
+                }, time);
+            });
+        };
+        let step2 = (time) => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    move2();
+                    resolve(1);
+                }, time);
+            });
+        };
+        async function demo() {
+            await step(1000);
+            await step1(3000);
+            await step2(3000);
+
+        }
+        demo();   
+    </script>
+</body>
+
+</html>
